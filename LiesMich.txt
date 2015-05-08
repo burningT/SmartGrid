@@ -1,0 +1,39 @@
+WICHTIG: Damit alles mit den Tests usw. funktioniert, müssen wir einige Dinge beachten.
+
+Im Ordner "_UnitTests" liegt die Projektmappe mit Unit-Tests für unseren Code. 
+Außerdem liegt in seinem Unterordner "SmartGridUnitTests" die Headerfile "UnitTestSetup.h", mit der das Define UNIT_TEST_ACTIVE festgelegt wird.
+Wenn dieses Define existiert, können die Codesegmente aller Klassen aktiviert werden, die nur zum Testen da sind.
+
+Damit das funktionieren kann, muss unser eigentlicher Code ein paar Dinge einhalten.
+Jeder Modultyp braucht eine Projektmappe. In dieser Projektmappe liegt einerseits das gleichnamige Projekt des Moduls und 
+andererseits das Projekt der dazugehörigen Mockups.
+Der Projektordner des Moduls ist gleichzeitig der Ordner für das Arduino-Projekt. Der Code darf dort also nicht in Unterordnern abgelegt werden.
+In diesem Ordner liegt also auch die .ino des Moduls, die im (Visual Studio-) Projekt nicht hinzugefügt werden sollte.
+Schließlich enthält dieser Ordner neben dem eigentlichen Code die "UnitTestINOSetup.h", die überall gleich ist.
+Sie muss als erstes in allen (auch bei den Mockups) .cpp-Dateien (oder deren erster Headerfile) included werden. 
+Durch sie kann (außer unter Arduino) Code fürs Testen "freigeschaltet" werden.
+Das betrifft vor allem den Code, der das exportieren der Methoden in eine .lib veranlasst. 
+Dieser sollte die in einer Headerfile organisierten Prototypen (und das sollten alle sein), wie im folgenden Beispiel dargestellt, umgeben:
+
+#pragma once
+#include "UnitTestINOSetup.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+#undef CPP_UNIT_TEST_EXPORT
+
+#ifdef UNIT_TEST_ACTIVE
+
+#define CPP_UNIT_TEST_EXPORT __declspec(dllexport)
+#else
+#define CPP_UNIT_TEST_EXPORT
+#endif
+
+
+class CPP_UNIT_TEST_EXPORT HalloWelt
+{
+public:
+	HalloWelt();
+	string Moin();
+};
