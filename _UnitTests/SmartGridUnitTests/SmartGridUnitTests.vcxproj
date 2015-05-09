@@ -43,6 +43,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\Zentralknoten\Mockups;..\Zentralknoten\Zentralknoten;..\SmartGridServer\Mockups;..\SmartGridServer\SmartGridServer;..\Messknoten\Mockups;..\Messknoten\Messknoten;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -87,11 +88,24 @@
     <ClInclude Include="unitTestSetup.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SmartGridServerTest.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="unittest1.cpp" />
+    <ClCompile Include="MessknotenTest.cpp" />
+    <ClCompile Include="ZentralknotenTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Messknoten\Mockups\MessknotenMockups.vcxproj">
+      <Project>{4fbc6735-de1e-43ac-b418-c4cb523b3a43}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SmartGridServer\Mockups\SmartGridServerMockups.vcxproj">
+      <Project>{3c95956a-f48f-4b0b-b9cc-1cfa2a23925c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Zentralknoten\Mockups\ZentralknotenMockups.vcxproj">
+      <Project>{539fe39a-522f-45ac-953b-54c904d345b1}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

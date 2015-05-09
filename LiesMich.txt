@@ -11,25 +11,16 @@ Der Projektordner des Moduls ist gleichzeitig der Ordner für das Arduino-Projekt
 In diesem Ordner liegt also auch die .ino des Moduls, die im (Visual Studio-) Projekt nicht hinzugefügt werden sollte.
 Schließlich enthält dieser Ordner neben dem eigentlichen Code die "UnitTestINOSetup.h", die überall gleich ist.
 Sie muss als erstes in allen (auch bei den Mockups) .cpp-Dateien (oder deren erster Headerfile) included werden. 
-Durch sie kann (außer unter Arduino) Code fürs Testen "freigeschaltet" werden.
+Durch sie kann (außer unter Arduino) mit dem Define UNIT_TEST_ACTIVE Code fürs Testen "freigeschaltet" werden.
 Das betrifft vor allem den Code, der das exportieren der Methoden in eine .lib veranlasst. 
-Dieser sollte die in einer Headerfile organisierten Prototypen (und das sollten alle sein), wie im folgenden Beispiel dargestellt, umgeben:
+Er wurde schon in der UnitTestINOSetup.h implementiert und stellt außerdem das Define CPP_UNIT_TEST_EXPORT zur Verfügung. 
+Dies muss wie folgt vor den zu exportierenden Klassen oder Methoden platziert werden:
 
 #pragma once
 #include "UnitTestINOSetup.h"
 #include <string>
 #include <iostream>
 using namespace std;
-
-#undef CPP_UNIT_TEST_EXPORT
-
-#ifdef UNIT_TEST_ACTIVE
-
-#define CPP_UNIT_TEST_EXPORT __declspec(dllexport)
-#else
-#define CPP_UNIT_TEST_EXPORT
-#endif
-
 
 class CPP_UNIT_TEST_EXPORT HalloWelt
 {

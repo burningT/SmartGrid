@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Messknoten", "Messknoten\Messknoten.vcxproj", "{3074236E-7325-44F6-B543-0AA82196A224}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mockups", "Mockups\Mockups.vcxproj", "{D03682C2-635B-4E80-942E-5CA20A10B383}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessknotenMockups", "Mockups\MessknotenMockups.vcxproj", "{4FBC6735-DE1E-43AC-B418-C4CB523B3A43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3074236E-7325-44F6-B543-0AA82196A224}.Debug|Win32.Build.0 = Debug|Win32
 		{3074236E-7325-44F6-B543-0AA82196A224}.Release|Win32.ActiveCfg = Release|Win32
 		{3074236E-7325-44F6-B543-0AA82196A224}.Release|Win32.Build.0 = Release|Win32
-		{D03682C2-635B-4E80-942E-5CA20A10B383}.Debug|Win32.ActiveCfg = Debug|Win32
-		{D03682C2-635B-4E80-942E-5CA20A10B383}.Debug|Win32.Build.0 = Debug|Win32
-		{D03682C2-635B-4E80-942E-5CA20A10B383}.Release|Win32.ActiveCfg = Release|Win32
-		{D03682C2-635B-4E80-942E-5CA20A10B383}.Release|Win32.Build.0 = Release|Win32
+		{4FBC6735-DE1E-43AC-B418-C4CB523B3A43}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4FBC6735-DE1E-43AC-B418-C4CB523B3A43}.Debug|Win32.Build.0 = Debug|Win32
+		{4FBC6735-DE1E-43AC-B418-C4CB523B3A43}.Release|Win32.ActiveCfg = Release|Win32
+		{4FBC6735-DE1E-43AC-B418-C4CB523B3A43}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
