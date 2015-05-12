@@ -1,0 +1,9 @@
+Debug/
+ipch/
+*.pdb
+*.obj
+*.log
+*.idb
+*.pch
+*.ipch
+*.suo
