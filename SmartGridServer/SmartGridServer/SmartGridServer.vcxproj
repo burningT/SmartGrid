@@ -78,7 +78,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DataManagement.h" />
+    <ClInclude Include="GroupData.h" />
+    <ClInclude Include="ServerInterfaceZentralknoten.h" />
+    <ClInclude Include="StringConverter.h" />
+    <ClInclude Include="TariffData.h" />
     <ClInclude Include="UnitTestINOSetup.h" />
+    <ClInclude Include="ZentralknotenData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DataManagement.cpp" />
+    <ClCompile Include="GroupData.cpp" />
+    <ClCompile Include="ServerInterfaceZentralknoten.cpp" />
+    <ClCompile Include="StringConverter.cpp" />
+    <ClCompile Include="TariffData.cpp" />
+    <ClCompile Include="ZentralknotenData.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
