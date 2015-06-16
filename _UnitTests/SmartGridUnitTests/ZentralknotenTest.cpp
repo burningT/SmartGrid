@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "../../Zentralknoten/Mockups/[...]"
-#pragma comment(lib, "../../Zentralknoten/Mockups/Debug/ZentralknotenMockups.lib")
+//#include "../../Zentralknoten/Mockups/[...]"
+//#pragma comment(lib, "../../Zentralknoten/Mockups/Debug/ZentralknotenMockups.lib")
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 

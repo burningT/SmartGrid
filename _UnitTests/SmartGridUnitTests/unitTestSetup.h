@@ -5,7 +5,7 @@
 * Headerfile für Aktivierung der Unit-Test-Einstellungen
 **/
 
-#define UNIT_TEST_ACTIVE		//Falls definiert, sind Unit-Tests aktiviert
-//#undef	UNIT_TEST_ACTIVE
+//#define UNIT_TEST_ACTIVE		//Falls definiert, sind Unit-Tests aktiviert
+#undef	UNIT_TEST_ACTIVE
 
 #endif

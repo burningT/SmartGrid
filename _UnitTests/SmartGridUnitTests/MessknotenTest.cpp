@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "../../Messknoten/Mockups/[...]"
-#pragma comment(lib, "../../Messknoten/Mockups/Debug/MessknotenMockups.lib")
+//#include "../../Messknoten/Mockups/[...]"
+//#pragma comment(lib, "../../Messknoten/Mockups/Debug/MessknotenMockups.lib")
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
