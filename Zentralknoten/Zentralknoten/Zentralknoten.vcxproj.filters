@@ -18,5 +18,22 @@
     <ClInclude Include="UnitTestINOSetup.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="ZentralknotenPreparationServer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PrepareKnotenserver.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Quelle.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ZentralknotenPreparationServer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PrepareKnotenserver.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -78,7 +78,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="PrepareKnotenserver.h" />
     <ClInclude Include="UnitTestINOSetup.h" />
+    <ClInclude Include="ZentralknotenPreparationServer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PrepareKnotenserver.cpp" />
+    <ClCompile Include="Quelle.cpp" />
+    <ClCompile Include="ZentralknotenPreparationServer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
