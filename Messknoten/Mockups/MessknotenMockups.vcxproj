@@ -77,28 +77,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="InterfaceDisplay.cpp" />
-    <ClCompile Include="InterfaceZentralknoten.cpp" />
-    <ClCompile Include="Messknoten.cpp" />
-    <ClCompile Include="MessknotenPrepareBeep.cpp" />
-    <ClCompile Include="MessknotenPrepareDisplay.cpp" />
-    <ClCompile Include="MessknotenPrepareLED.cpp" />
-    <ClCompile Include="PrepareArduinoDisplay.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="InterfaceDisplay.h" />
-    <ClInclude Include="InterfaceZentralknoten.h" />
-    <ClInclude Include="Messknoten.h" />
-    <ClInclude Include="MessknotenPrepareBeep.h" />
-    <ClInclude Include="MessknotenPrepareDisplay.h" />
-    <ClInclude Include="MessknotenPrepareLED.h" />
-    <ClInclude Include="PrepareArduinoDisplay.h" />
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="MessknotenMockups.rc" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
