@@ -6,10 +6,6 @@ MessknotenPrepareBeep::MessknotenPrepareBeep()
 }
 
 
-MessknotenPrepareBeep::~MessknotenPrepareBeep()
-{
-}
-
-void generateBeep(int BeepSignal)
+void MessknotenPrepareBeep::GenerateBeep(int Beep)
 {
 }

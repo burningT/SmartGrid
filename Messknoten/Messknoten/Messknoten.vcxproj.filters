@@ -18,9 +18,6 @@
     <ClInclude Include="UnitTestINOSetup.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="InterfaceDisplay.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="InterfaceZentralknoten.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -41,9 +38,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="InterfaceDisplay.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="InterfaceZentralknoten.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -60,6 +54,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="PrepareArduinoDisplay.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MainTest.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

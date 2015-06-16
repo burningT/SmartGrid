@@ -4,12 +4,12 @@
 #include <iostream>
 using namespace std;
 
-class MessknotenPrepareBeep
+class CPP_UNIT_TEST_EXPORT MessknotenPrepareBeep
 {
-	int BeepSignal; 
+	int Beep; 
 
 public:
 	MessknotenPrepareBeep();
-	~MessknotenPrepareBeep();
+	void GenerateBeep(int Beep);
 };
 

@@ -6,11 +6,7 @@ PrepareArduinoDisplay::PrepareArduinoDisplay()
 }
 
 
-PrepareArduinoDisplay::~PrepareArduinoDisplay()
-{
-}
-
-void encodeMessage(int message)
+void PrepareArduinoDisplay:: EncodeMessage(int message)
 {
 }
 

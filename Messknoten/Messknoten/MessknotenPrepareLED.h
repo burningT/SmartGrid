@@ -4,12 +4,13 @@
 #include <iostream>
 using namespace std;
 
-class MessknotenPrepareLED
+class CPP_UNIT_TEST_EXPORT MessknotenPrepareLED
 {
-	int LedSignal;
+	int Led;
 
 public:
 	MessknotenPrepareLED();
-	~MessknotenPrepareLED();
+	
+	void GenerateLedSignal(int Led);
 };
 

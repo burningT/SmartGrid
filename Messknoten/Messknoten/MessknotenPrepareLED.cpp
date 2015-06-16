@@ -6,10 +6,6 @@ MessknotenPrepareLED::MessknotenPrepareLED()
 }
 
 
-MessknotenPrepareLED::~MessknotenPrepareLED()
-{
-}
-
-void generateLedSignal(int LedSignal)
+void MessknotenPrepareLED::GenerateLedSignal(int Led)
 {
 }
