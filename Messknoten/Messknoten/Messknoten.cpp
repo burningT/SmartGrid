@@ -1,16 +1,17 @@
-#include "Messknoten.h"
 
+#include "Messknoten.h"
 
 Messknoten::Messknoten()
 {
+
 }
 
-void Messknoten::syncDaytime(int Daytime)
+void Messknoten::SyncDaytime(int Daytime)
 {
 
 }
 
-void calcCurrentConsumption(int currentConsumption)
+void Messknoten::CalcCurrentConsumption(int currentConsumption)
 {
 	/*Dies ist eine Maßeinheit der Arbeit bzw. der Energie. 
 	Kilo-Watt-Stunde (kWh) bedeutet "1000 Watt während einer Stunde".
@@ -24,15 +25,15 @@ void calcCurrentConsumption(int currentConsumption)
 	
 }
 
-void transmitDisplayCurrentConsumption(int currentConsumption)
+void Messknoten::TransmitDisplayCurrentConsumption(int currentConsumption)
 {
 }
 
-void transmitZentralknotenCurrentConsumption(int currentConsumption)
+void Messknoten::TransmitZentralknotenCurrentConsumption(int currentConsumption)
 {
 }
 
-void calcCostIfUsedNow(float costIfUsedNow, float tariffCourse, int currentConsumption)
+void Messknoten::CalcCostIfUsedNow(float costIfUsedNow, float tariffCourse, int currentConsumption)
 {
 	/*Für die Ausrechnung der Stromkosten, die ein Gerät verursacht, multipliziert man
 	den Stromverbrauch des Gerätes mit dem Preis pro Kilowattstunde (kWh) (Stromtarif).
@@ -42,19 +43,20 @@ void calcCostIfUsedNow(float costIfUsedNow, float tariffCourse, int currentConsu
 	*/
 }
 
-void transmitDisplayCostIfUsedNow(float costIfUsedNow)
+void Messknoten::TransmitDisplayCostIfUsedNow(float costIfUsedNow)
 {
 }
 
-void transmitZentralknotenCostIfUsedNow(float costIfUsedNow)
+void Messknoten::TransmitZentralknotenCostIfUsedNow(float costIfUsedNow)
 {
 }
 
-void generateSiganal(int generateSiganal)
+void Messknoten::GenerateLedSiganal(int LedSignal)
 {
 }
 
-void generateBeep(int generateBeep)
+void Messknoten::GenerateBeep(int BeepSignal)
 {
+
 }
 

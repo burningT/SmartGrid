@@ -6,15 +6,12 @@ MessknotenPrepareDisplay::MessknotenPrepareDisplay()
 }
 
 
-MessknotenPrepareDisplay::~MessknotenPrepareDisplay()
+
+void MessknotenPrepareDisplay::TransmitCurrentConsumption(float currentConsumption)
 {
 }
 
-void transmitCurrentConsumption(float currentConsumption)
-{
-}
-
-void transmitCostIfUsedNow(float Cost)
+void MessknotenPrepareDisplay::TransmitCostIfUsedNow(float Cost)
 {
 }
 

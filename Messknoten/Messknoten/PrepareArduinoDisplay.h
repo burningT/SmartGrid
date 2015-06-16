@@ -4,13 +4,13 @@
 #include <iostream>
 using namespace std;
 
-class PrepareArduinoDisplay
+class CPP_UNIT_TEST_EXPORT PrepareArduinoDisplay
 {
 	//string message; 
 	int message;
 
 public:
 	PrepareArduinoDisplay();
-	~PrepareArduinoDisplay();
+	void EncodeMessage(int message);
 };
 

@@ -5,6 +5,7 @@
 using namespace std;
 
 
+
 class CPP_UNIT_TEST_EXPORT Messknoten
 {
 private:
@@ -24,10 +25,20 @@ private:
 	void optimalUsageTime(int[], int[]);
 	float costIfUsedNow();
 	int ratingOfCurrentUsage();
-	int generateSignal; 
-	int generateBeep; 
+	int LedSignal; 
+	int BeepSignal; 
 
 public:
 	Messknoten();
-	//void syncDaytime(int Daytime);
+	void SyncDaytime(int Daytime);
+	void CalcCurrentConsumption(int currentConsumption);
+	void TransmitDisplayCurrentConsumption(int currentConsumption);
+	void TransmitZentralknotenCurrentConsumption(int currentConsumption);
+	void CalcCostIfUsedNow(float costIfUsedNow, float tariffCourse, int currentConsumption);
+	void TransmitDisplayCostIfUsedNow(float costIfUsedNow);
+	void TransmitZentralknotenCostIfUsedNow(float costIfUsedNow);
+	void GenerateLedSiganal(int LedSignal);
+	void GenerateBeep(int BeepSignal);
 };
+
+

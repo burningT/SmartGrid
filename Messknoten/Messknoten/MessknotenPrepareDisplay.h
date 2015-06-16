@@ -5,7 +5,7 @@
 using namespace std;
 
 
-class MessknotenPrepareDisplay
+class CPP_UNIT_TEST_EXPORT MessknotenPrepareDisplay
 {
 private:
 	float Daytime;
@@ -15,6 +15,9 @@ private:
 
 public:
 	MessknotenPrepareDisplay();
-	~MessknotenPrepareDisplay();
+	
+	void TransmitCurrentConsumption(float currentConsumption);
+	void TransmitCostIfUsedNow(float Cost); 
+	
 };
 
