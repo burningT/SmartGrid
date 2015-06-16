@@ -82,3 +82,20 @@ string StringConverter::toString(vector<int> vector){
 
 	return oss.str();
 }
+
+/**
+*	Diese Methode konvertiert einen Vektor mit Strings in einen String
+*/
+string StringConverter::toString(vector<string> vector){
+
+	string string_out = delimiterL;
+
+	for (const auto &piece : vector)	//iteriert durch den Vektor und fügt jedes Element mit Separator ein
+		string_out += piece + separator;
+
+	string_out.erase(string_out.capacity()-1,1);	//lösche letzten Separator
+
+	string_out += delimiterR;
+
+	return string_out;
+}
