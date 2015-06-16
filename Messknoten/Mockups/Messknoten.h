@@ -24,7 +24,10 @@ private:
 	void optimalUsageTime(int[], int[]);
 	float costIfUsedNow();
 	int ratingOfCurrentUsage();
+	int generateSignal; 
+	int generateBeep; 
 
 public:
 	Messknoten();
+	//void syncDaytime(int Daytime);
 };

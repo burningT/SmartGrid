@@ -24,6 +24,18 @@
     <ClCompile Include="Messknoten.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="MessknotenPrepareDisplay.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MessknotenPrepareBeep.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MessknotenPrepareLED.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PrepareArduinoDisplay.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InterfaceDisplay.h">
@@ -35,5 +47,25 @@
     <ClInclude Include="Messknoten.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MessknotenPrepareDisplay.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MessknotenPrepareBeep.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MessknotenPrepareLED.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PrepareArduinoDisplay.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MessknotenMockups.rc">
+      <Filter>Ressourcendateien</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
