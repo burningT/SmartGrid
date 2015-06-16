@@ -26,6 +26,8 @@ private:
 public:
 	StringConverter();
 	StringConverter(string delimiterL, string delimiterR, string separator);
+	~StringConverter();
 
 	string toString(vector<float> vector);
+	string toString(vector<int> vector);
 };

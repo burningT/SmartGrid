@@ -12,5 +12,5 @@
 
 GroupData::GroupData(){
 	identifier = 0;
-	ranking.clear;
+	ranking.clear();
 }

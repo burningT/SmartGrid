@@ -24,12 +24,13 @@ using namespace std;
 class CPP_UNIT_TEST_EXPORT TariffData
 {
 private:
-	int identifier;
-	vector<float> tariffCourse;
-	vector<float> networkLoadCourse;
+	int identifier;						//eindeutiger Identifier des Tarifs
+	vector<float> tariffCourse;			//Tarifverlauf des Tarifs
+	vector<float> networkLoadCourse;	//Profil der Netzwerkauslastung
 public:
 	TariffData();
 	TariffData(int identifier, vector<float> tariffCourse, vector<float> networkLoadCourse);
+	~TariffData();
 
 	void SetIdentifier(int identifier);
 	int GetIdentifier();

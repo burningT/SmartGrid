@@ -21,4 +21,5 @@ private:
 	list<int> ranking;
 public:
 	GroupData();
+	~GroupData();
 };
