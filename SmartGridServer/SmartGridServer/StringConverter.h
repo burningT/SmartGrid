@@ -31,4 +31,6 @@ public:
 	string toString(vector<float> vector);
 	string toString(vector<int> vector);
 	string toString(vector<string> vector);
+
+	vector<string> toVector(string in_string);
 };

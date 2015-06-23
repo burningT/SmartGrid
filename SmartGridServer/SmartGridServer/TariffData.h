@@ -30,6 +30,7 @@ private:
 public:
 	TariffData();
 	TariffData(int identifier, vector<float> tariffCourse, vector<float> networkLoadCourse);
+	TariffData(string in_string);
 	~TariffData();
 
 	void SetIdentifier(int identifier);
@@ -43,7 +44,7 @@ public:
 	void SetNetworkLoadCourse(vector<float> networkLoadCourse);
 	vector<float> GetNetworkLoadCourse();
 	string GetNetworkLoadCourse_string();
-};
 
-bool operator== (TariffData &obj1, TariffData &obj2);
-bool operator!= (TariffData &obj1, TariffData &obj2);
+	bool equals(TariffData obj1);
+	string toString();
+};

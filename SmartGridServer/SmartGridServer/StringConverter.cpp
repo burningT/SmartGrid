@@ -100,3 +100,42 @@ string StringConverter::toString(vector<string> vector){
 
 	return string_out;
 }
+
+vector<string> StringConverter::toVector(string in_string){
+
+	vector<string> string_vector;
+	string string_buffer="";
+	int delimiterL_count = 0; //Haelt die Anzahl der linken Begrenzer gegenüber der rechter Begrenzer
+	char c =0;
+
+	for (int i = 0; i < in_string.length(); i++){
+		c = in_string[i];
+
+		//Begrenzer-Zähler
+		if (c == delimiterL[0]){
+			delimiterL_count++;
+		}
+		else if (c == delimiterR[0]){
+			delimiterL_count--;
+		}
+
+		if ((c == delimiterL[0] || c == separator[0]) && delimiterL_count == 1){	//Falls linker Begrenzer oder Separator gefunden, lege string_buffer in Vector
+			if (string_buffer.length() > 0){
+				string_vector.push_back(string_buffer);
+				string_buffer = "";
+			}
+		}
+		else if (c == delimiterR[0] && delimiterL_count == 0){ //Falls letzterrechter Begrenzer gefunden, lege string_buffer in Vector und return
+			if (string_buffer.length() > 0){			
+				string_vector.push_back(string_buffer);
+			}
+
+			return string_vector;
+		}
+		else{											//Falls keine besonderen Charakter gefunden, Haenge an String an
+			string_buffer += c;
+		}
+	}
+
+	return string_vector;
+}

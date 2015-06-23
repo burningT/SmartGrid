@@ -49,7 +49,7 @@ ZentralknotenData::~ZentralknotenData(){
 */
 void ZentralknotenData::SetIdentifier(int identifier){
 
-	ZentralknotenData::identifier;
+	ZentralknotenData::identifier=identifier;
 }
 /** Diese Methode gibt den Wert von identifier zurück
 *
@@ -119,14 +119,16 @@ string ZentralknotenData::GetRatingOfEconomy_string(){
 	return converter.toString(ratingOfEconomy);
 }
 
-bool operator== (ZentralknotenData &obj1, ZentralknotenData &obj2)
+bool ZentralknotenData::equals(ZentralknotenData obj1)
 {
 
-	return (obj1.GetIdentifier() == obj2.GetIdentifier());
+	return (obj1.GetIdentifier() == identifier);
 }
 
-bool operator!= (ZentralknotenData &obj1, ZentralknotenData &obj2)
-{
+string ZentralknotenData::toString(){
 
-	return !(obj1 == obj2);
+	StringConverter converter;
+	vector <string> bufferVector{ GetIdentifier_string(), GetGroup_string(), GetRatingOfEconomy_string() };
+
+	return converter.toString(bufferVector);
 }

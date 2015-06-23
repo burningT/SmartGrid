@@ -36,6 +36,47 @@ TariffData::TariffData(int identifier, vector<float>  tariffCourse, vector<float
 	SetTariffCourse(tariffCourse);
 	SetNetworkLoadCourse(networkLoadCourse);
 }
+/** Dies ist ein Konstruktor
+*
+* String vom Format der toString Funktion wird erwartet.
+*
+*/
+TariffData::TariffData(string in_string){
+
+	StringConverter converter;
+	vector<string> in_vector;
+	vector<string> bufferString_vector;
+	vector<float> bufferFloat_vector;
+
+	in_vector = converter.toVector(in_string);
+
+	if (in_vector.size() != 3){	//Falls Vektor-Laenge nicht Argumentmenge entspricht, nutze leeren Konstruktor
+		TariffData();
+	}
+	else{
+		SetIdentifier( atoi(in_vector[0].c_str()) );	//Setze Identifier
+
+		bufferString_vector = converter.toVector(in_vector[1]);	//Setze Tarifkurs
+		bufferFloat_vector.resize(bufferString_vector.size());
+
+		for (int i = 0; i < bufferString_vector.size(); i++)
+		{
+			bufferFloat_vector[i] = stof(bufferString_vector[i]);
+		}
+
+		SetTariffCourse(bufferFloat_vector);
+
+		bufferString_vector = converter.toVector(in_vector[2]);	//Setze NEtzwerklastprofil
+		bufferFloat_vector.resize(bufferString_vector.size());
+
+		for (int i = 0; i < bufferString_vector.size(); i++)
+		{
+			bufferFloat_vector[i] = stof(bufferString_vector[i]);
+		}
+
+		SetNetworkLoadCourse(bufferFloat_vector);
+	}
+}
 /** Dies ist ein Destruktor
 *
 */
@@ -113,14 +154,15 @@ string TariffData::GetNetworkLoadCourse_string(){
 	return converter.toString(networkLoadCourse);
 }
 
-bool operator== (TariffData &obj1, TariffData &obj2)
-{
+bool TariffData::equals(TariffData obj1){
 
-	return (obj1.GetIdentifier() == obj2.GetIdentifier());
+	return (obj1.GetIdentifier() == identifier);
 }
 
-bool operator!= (TariffData &obj1, TariffData &obj2)
-{
+string TariffData::toString(){
 
-	return !(obj1 == obj2);
+	StringConverter converter;
+	vector <string> bufferVector{ GetIdentifier_string(), GetTariffCourse_string(), GetNetworkLoadCourse_string() };
+
+	return converter.toString(bufferVector);
 }

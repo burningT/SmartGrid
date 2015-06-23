@@ -45,8 +45,7 @@ public:
 	void AppendRatingOfEconomy(int ratingOfEconomy);
 	vector<int> GetRatingOfEconomy();
 	string GetRatingOfEconomy_string();
+
+	bool equals(ZentralknotenData obj1);
+	string toString();
 };
-
-
-bool operator== (ZentralknotenData &obj1, ZentralknotenData &obj2);
-bool operator!= (ZentralknotenData &obj1, ZentralknotenData &obj2);
