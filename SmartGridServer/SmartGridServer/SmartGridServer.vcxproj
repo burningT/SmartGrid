@@ -92,6 +92,7 @@
     <ClCompile Include="ServerInterfaceZentralknoten.cpp" />
     <ClCompile Include="StringConverter.cpp" />
     <ClCompile Include="TariffData.cpp" />
+    <ClCompile Include="TestMain.cpp" />
     <ClCompile Include="ZentralknotenData.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

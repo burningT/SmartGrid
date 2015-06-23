@@ -46,3 +46,7 @@ public:
 	vector<int> GetRatingOfEconomy();
 	string GetRatingOfEconomy_string();
 };
+
+
+bool operator== (ZentralknotenData &obj1, ZentralknotenData &obj2);
+bool operator!= (ZentralknotenData &obj1, ZentralknotenData &obj2);

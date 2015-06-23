@@ -44,3 +44,6 @@ public:
 	vector<float> GetNetworkLoadCourse();
 	string GetNetworkLoadCourse_string();
 };
+
+bool operator== (TariffData &obj1, TariffData &obj2);
+bool operator!= (TariffData &obj1, TariffData &obj2);

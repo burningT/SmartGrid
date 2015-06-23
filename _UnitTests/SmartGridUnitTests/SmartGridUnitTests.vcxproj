@@ -96,26 +96,6 @@
     </ClCompile>
     <ClCompile Include="ZentralknotenTest.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Messknoten\Messknoten\Messknoten.vcxproj">
-      <Project>{3074236e-7325-44f6-b543-0aa82196a224}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Messknoten\Mockups\MessknotenMockups.vcxproj">
-      <Project>{4fbc6735-de1e-43ac-b418-c4cb523b3a43}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SmartGridServer\Mockups\SmartGridServerMockups.vcxproj">
-      <Project>{3c95956a-f48f-4b0b-b9cc-1cfa2a23925c}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SmartGridServer\SmartGridServer\SmartGridServer.vcxproj">
-      <Project>{6b6b9422-4a10-4633-8b1e-aff87a4758d0}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Zentralknoten\Mockups\ZentralknotenMockups.vcxproj">
-      <Project>{539fe39a-522f-45ac-953b-54c904d345b1}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Zentralknoten\Zentralknoten\Zentralknoten.vcxproj">
-      <Project>{bbc04fc6-02a0-49c7-baa1-639888a60727}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

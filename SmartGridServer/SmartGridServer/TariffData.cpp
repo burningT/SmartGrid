@@ -67,14 +67,12 @@ string TariffData::GetIdentifier_string(){
 	return to_string(identifier);
 }
 
-/** Diese Methode setzt tariffCourse auf den Wert der Übergabe
+/** Diese Methode setzt tariffCourse auf den Wert der Übergabe, falls die Längen übereinstimmen
 *
 */
 void TariffData::SetTariffCourse(vector<float> tariffCourse){
 	
-	if (tariffCourse.capacity() == COURSE_LEN){
 		TariffData::tariffCourse = tariffCourse;
-	}
 }
 /** Diese Methode gibt den Wert von GetTariffCourse zurück
 *
@@ -93,14 +91,12 @@ string	TariffData::GetTariffCourse_string(){
 	return converter.toString(tariffCourse);
 }
 
-/** Diese Methode setzt tariffCourse auf den Wert der Übergabe
+/** Diese Methode setzt tariffCourse auf den Wert der Übergabe, falls die Laengen übereinstimmen
 *
 */
 void TariffData::SetNetworkLoadCourse(vector<float> networkLoadCourse){
 
-	if (networkLoadCourse.capacity() == COURSE_LEN){
-		TariffData::networkLoadCourse = networkLoadCourse;
-	}
+	TariffData::networkLoadCourse = networkLoadCourse;
 }
 /** Diese Methode gibt den Wert von GetTariffCourse zurück
 *
@@ -115,4 +111,16 @@ string TariffData::GetNetworkLoadCourse_string(){
 	StringConverter converter;
 
 	return converter.toString(networkLoadCourse);
+}
+
+bool operator== (TariffData &obj1, TariffData &obj2)
+{
+
+	return (obj1.GetIdentifier() == obj2.GetIdentifier());
+}
+
+bool operator!= (TariffData &obj1, TariffData &obj2)
+{
+
+	return !(obj1 == obj2);
 }

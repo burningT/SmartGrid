@@ -118,3 +118,15 @@ string ZentralknotenData::GetRatingOfEconomy_string(){
 
 	return converter.toString(ratingOfEconomy);
 }
+
+bool operator== (ZentralknotenData &obj1, ZentralknotenData &obj2)
+{
+
+	return (obj1.GetIdentifier() == obj2.GetIdentifier());
+}
+
+bool operator!= (ZentralknotenData &obj1, ZentralknotenData &obj2)
+{
+
+	return !(obj1 == obj2);
+}

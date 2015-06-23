@@ -18,6 +18,7 @@
 *
 */
 StringConverter::StringConverter(){
+	
 	delimiterL = "[";
 	delimiterR = "]";
 	separator  = ",";
@@ -56,7 +57,7 @@ string StringConverter::toString(vector<float> vector){
 
 		oss << delimiterL;	//Füge linken delimiter ein
 														//Füge Elemente mit Trennzeichen ein
-		copy(vector.begin(), vector.end() - 1, ostream_iterator<int>(oss, separator.c_str()));
+		copy(vector.begin(), vector.end() - 1, ostream_iterator<float>(oss, separator.c_str()));
 
 		oss << vector.back() << delimiterR;		//Füge letztes Element mit rechtem delimiter ein
 	}
@@ -93,7 +94,7 @@ string StringConverter::toString(vector<string> vector){
 	for (const auto &piece : vector)	//iteriert durch den Vektor und fügt jedes Element mit Separator ein
 		string_out += piece + separator;
 
-	string_out.erase(string_out.capacity()-1,1);	//lösche letzten Separator
+	string_out.erase(string_out.size()-1,1);	//lösche letzten Separator
 
 	string_out += delimiterR;
 
