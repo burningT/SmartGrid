@@ -14,6 +14,7 @@
 #include "GroupData.h"
 #include "TariffData.h"
 #include "ZentralknotenData.h"
+#include "../librarys/xmlParser/xmlParser.h"	//Unter Visual Studio muss auch im Projekt includiert werden. Richtiger Weg konnte noch nicht gefunden werden.
 
 #include <vector>
 #include <algorithm>
@@ -38,6 +39,9 @@ public:
 	vector<TariffData> GetTariffData();
 	string GetTariffData_string();
 	TariffData GetTariffData_byId(int identifier);
+	//bool readFile_TariffData(string path);
+	XMLNode readFile_TariffData(string path, string tag);	//Nicht implementiert
+	bool writeFile_TariffData(string path);					//Nicht implementiert
 
 	void SetZentralknotenData(vector<ZentralknotenData> zentralknotenData);
 	void AppendZentralknotenData(ZentralknotenData zentralknotenData);
@@ -45,4 +49,6 @@ public:
 	vector<ZentralknotenData> GetZentralknotenData();
 	string GetZentralknotenData_string();
 	ZentralknotenData GetZentralknotenData_byId(int identifier);
+	bool readFile_ZentralknotenData(string path);	//Nicht implementiert
+	bool writeFile_ZentralknotenData(string path);	//Nicht implementiert
 };

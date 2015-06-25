@@ -31,6 +31,7 @@ private:
 public:
 	ZentralknotenData();
 	ZentralknotenData(int identifier, int group, vector<int> ratingOfEconomy);
+	ZentralknotenData(string in_string);
 	~ZentralknotenData();
 
 	void SetIdentifier(int identifier);

@@ -9,9 +9,10 @@ using namespace std;
 void StringConverter_toString_Test();
 void StringConverter_toVector_Test();
 void TariffData_operators_Test();
+void TariffDate_TariffData();
 void DataManagement_SetZentralknotenData_byId_Test();
 void DataManagement_SetTariffData_byId_Test();
-void TariffDate_TariffData();
+//void DataManagement_readFile_TariffData();
 
 
 void main(int argc, const char* argv[])
@@ -19,9 +20,11 @@ void main(int argc, const char* argv[])
 	StringConverter_toString_Test();
 	StringConverter_toVector_Test();
 	TariffData_operators_Test();
+	TariffDate_TariffData();
 	DataManagement_SetZentralknotenData_byId_Test();
 	DataManagement_SetTariffData_byId_Test();
-	TariffDate_TariffData();
+	//DataManagement_readFile_TariffData();
+	
 
 	return;
 }
@@ -275,6 +278,26 @@ void DataManagement_SetTariffData_byId_Test(){
 	
 	return;
 }
+/*void DataManagement_readFile_TariffData(){	//Funktion nicht implementiert
+	////////////////////////////////////
+	/*Test DataManagement.readFile_TariffData*/
+
+	/*DataManagement dataset1;
+
+	string xmlPath = "C:\\Users\\Tobias\\workspace\\VISUALSTUDIO\\SmartGrid\\SmartGridServer\\SmartGridServer\\Data\\ontario_demand_multiday.xml";
+	string xmlTag = "Root";
+
+
+
+	cout << "Test DataManagement.readFile_TariffData: ";
+
+	cout << dataset1.readFile_TariffData(xmlPath, xmlTag).getName();
+
+	cout << "\n";
+
+	return;
+}*/
+
 void TariffDate_TariffData(){
 	////////////////////////////////////
 	/*Test TariffData.TariffData*/
@@ -314,6 +337,43 @@ void TariffDate_TariffData(){
 	if (tariff_result.GetIdentifier() == tariff1.GetIdentifier() &&
 		result1TariffCourse_bool &&
 		result1NetworkLoadCourse_bool)
+
+		cout << "ERFOLGREICH";
+	else
+		cout << "fehlgeschlagen";
+
+	cout << "\n";
+
+	return;
+}
+
+void ZentralknotenData_ZentralknotenData(){
+	////////////////////////////////////
+	/*Test ZentralknotenData.ZentralknotenData*/
+
+	ZentralknotenData zentralknoten1 = ZentralknotenData((int)124, (int)0, vector < int > {1, 5, 4, 34, 7, 80});
+	string zentralknoten_string = zentralknoten1.toString();
+	ZentralknotenData zentralknoten_result(zentralknoten_string);
+
+	bool result1Economy_bool = false;
+
+	cout << "Test ZentralknotenData.ZentralknotenData: ";
+
+	int i;
+
+	if (zentralknoten_result.GetRatingOfEconomy().size() == zentralknoten1.GetRatingOfEconomy().size()){
+
+		i = 0;
+		result1Economy_bool = true;
+
+		for (i = 0; i < zentralknoten_result.GetRatingOfEconomy().size() && result1Economy_bool; i++){	//Durchlaufe Vectoren, bis Ende erreicht oder Fehler in Uebereinstimmung geunden
+
+			result1Economy_bool = (zentralknoten_result.GetRatingOfEconomy()[i] == zentralknoten1.GetRatingOfEconomy()[i]);
+		}
+	}
+
+	if (zentralknoten_result.GetIdentifier() == zentralknoten1.GetIdentifier() &&
+		result1Economy_bool)
 
 		cout << "ERFOLGREICH";
 	else

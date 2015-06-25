@@ -123,6 +123,20 @@ TariffData DataManagement::GetTariffData_byId(int identifier){
 
 	return tariffData[i - 1];
 }
+//bool readFile_TariffData(string path, string tag){
+/*XMLNode readFile_TariffData(string path, string tag){		//Nicht implementiert wegen INCLUDE-Problemen
+	
+	XMLNode xmlTree;
+	XMLResults xmlResults;
+
+	wchar_t* test = {0};
+
+	xmlTree = XMLNode::parseFile((wchar_t*)path.c_str(), (wchar_t*)tag.c_str(), &xmlResults);
+
+
+	return xmlTree;
+	//return true;
+}*/
 
 /** Diese Methode setzt zentralknotenData auf den Wert der Uebergabe
 *

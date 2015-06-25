@@ -35,6 +35,39 @@ ZentralknotenData::ZentralknotenData(int identifier, int group, vector<int> rati
 	SetGroup(group);
 	SetRatingOfEconomy(ratingOfEconomy);
 }
+/** Dies ist ein Konstruktor
+*
+* String vom Format der toString Funktion wird erwartet.
+*
+*/
+ZentralknotenData::ZentralknotenData(string in_string){
+
+	StringConverter converter;
+	vector<string> in_vector;
+	vector<string> bufferString_vector;
+	vector<int> bufferInt_vector;
+
+	in_vector = converter.toVector(in_string);
+
+	if (in_vector.size() != 3){	//Falls Vektor-Laenge nicht Argumentmenge entspricht, nutze leeren Konstruktor
+		ZentralknotenData();
+	}
+	else{
+		SetIdentifier(atoi(in_vector[0].c_str()));	//Setze Identifier
+
+		SetGroup(atoi(in_vector[1].c_str()));		//Setze group
+
+		bufferString_vector = converter.toVector(in_vector[2]);	//Setze Bewertung der Oekonomie
+		bufferInt_vector.resize(bufferString_vector.size());
+
+		for (int i = 0; i < bufferString_vector.size(); i++)
+		{
+			bufferInt_vector[i] = atoi(bufferString_vector[0].c_str());
+		}
+
+		SetRatingOfEconomy(bufferInt_vector);
+	}
+}
 /** Dies ist ein Destruktor
 *
 */
