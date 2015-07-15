@@ -91,8 +91,8 @@ string StringConverter::toString(vector<string> vector){
 
 	string string_out = delimiterL;
 
-	for (const auto &piece : vector)	//iteriert durch den Vektor und fügt jedes Element mit Separator ein
-		string_out += piece + separator;
+	for (int i = 0; i < vector.size(); i++)	//iteriert durch den Vektor und fuegt jedes Element mit Separator ein
+		string_out += vector[i] + separator;
 
 	string_out.erase(string_out.size()-1,1);	//lösche letzten Separator
 

@@ -15,7 +15,7 @@ void DataManagement_SetTariffData_byId_Test();
 //void DataManagement_readFile_TariffData();
 
 
-void main(int argc, const char* argv[])
+int main(int argc, const char* argv[])
 {
 	StringConverter_toString_Test();
 	StringConverter_toVector_Test();
@@ -26,23 +26,26 @@ void main(int argc, const char* argv[])
 	//DataManagement_readFile_TariffData();
 	
 
-	return;
+	return 0;
 }
 
 void StringConverter_toString_Test(){
 	////////////////////////////////////
 	/*Test StringConverter.toString*/
 	StringConverter converter;
-
-	vector < float > testVectorF{ 1.3f, 2.2f, 3.1f };
+	
+	float arrF[] = { 1.3f, 2.2f, 3.1f };
+	vector < float > testVectorF (arrF,arrF+3);
 	string finalStringF = "[1.3,2.2,3.1]";
 	string resultStringF = converter.toString(testVectorF);
-
-	vector < int > testVectoINT{ 1, 2, 3 };
+	
+	int arrINT[] = { 1, 2, 3 };
+	vector < int > testVectoINT (arrINT,arrINT+3);
 	string finalStringINT = "[1,2,3]";
 	string resultStringINT = converter.toString(testVectoINT);
-
-	vector < string > testVectorS{ "ab", "cd", "Ef" };
+	
+	string arrS[] = { "ab", "cd", "Ef" };
+	vector < string > testVectorS (arrS,arrS+3);
 	string finalStringS = "[ab,cd,Ef]";
 	string resultStringS = converter.toString(testVectorS);
 
@@ -67,10 +70,12 @@ void StringConverter_toVector_Test(){
 	////////////////////////////////////
 	/*Test StringConverter.toVector*/
 	StringConverter converter;
-
-	vector < float > testVectorF{ 1.3f, 2.2f, 3.1f };
+	
+	float arrF[] = { 1.3f, 2.2f, 3.1f };
+	vector < float > testVectorF (arrF,arrF+3);
 	string stringF = converter.toString(testVectorF);
-	vector<string> testVectorS{ stringF, "abc", "def", "42", "Ein Satz!" };
+	string arrS[] = { stringF, "abc", "def", "42", "Ein Satz!" };
+	vector<string> testVectorS(arrS,arrS+5);
 	string testS = converter.toString(testVectorS);
 
 	vector<string> result1Vector = converter.toVector(testS);
@@ -83,7 +88,6 @@ void StringConverter_toVector_Test(){
 
 	if (result1Vector.size() == testVectorS.size()){
 
-		i = 0;
 		realResult1_bool = true;
 
 		for (i = 0; i < result1Vector.size() && realResult1_bool; i++){	//Durchlaufe Vectoren, bis Ende erreicht oder Fehler in Uebereinstimmung geunden
@@ -104,8 +108,10 @@ void StringConverter_toVector_Test(){
 void TariffData_operators_Test(){
 	////////////////////////////////////
 	/*Test TariffData.operators*/
-	vector<float>  tariffCourse{ 1.1f, 1.2f, 2.3f };
-	vector<float> networkLoadCourse{ 7.7f, 7.9f, 5.4f };
+	float arrF1[] = { 1.1f, 1.2f, 2.3f };
+	vector<float>  tariffCourse (arrF1,arrF1+3);
+	float arrF2[] = { 7.7f, 7.9f, 5.4f };
+	vector<float> networkLoadCourse(arrF2,arrF2+3);
 
 	TariffData dataset1(123, tariffCourse, networkLoadCourse);
 	TariffData dataset2;
@@ -141,9 +147,12 @@ void DataManagement_SetZentralknotenData_byId_Test(){
 	ZentralknotenData zentralknoten1 = ZentralknotenData((int)124, (int)0, vector<int>());
 	ZentralknotenData zentralknoten2 = ZentralknotenData((int)125, (int)0, vector<int>());
 
-	vector<ZentralknotenData> zentralknoten1_vector{ ZentralknotenData((int)123, (int)0, vector<int>()),
-													 ZentralknotenData((int)125, (int)123, vector<int>()),
-													 ZentralknotenData((int)224, (int)123, vector<int>()) };
+	vector<ZentralknotenData> zentralknoten1_vector;
+	
+	zentralknoten1_vector.push_back(ZentralknotenData((int)123, (int)0, vector<int>()));
+	zentralknoten1_vector.push_back(ZentralknotenData((int)125, (int)123, vector<int>()));
+	zentralknoten1_vector.push_back(ZentralknotenData((int)224, (int)123, vector<int>()));
+
 
 	DataManagement dataset1(vector<TariffData>(), zentralknoten1_vector);
 	
@@ -210,12 +219,16 @@ void DataManagement_SetTariffData_byId_Test(){
 	////////////////////////////////////
 	/*Test DataManagement.SetTariffData_byId*/
 	
-	TariffData tariff1 = TariffData((int)124, vector < float > {1.2f}, vector<float>());
-	TariffData tariff2 = TariffData((int)125, vector<float>{1.2f}, vector<float>());
-
-	vector<TariffData> tariff1_vector{ TariffData((int)123, vector<float>{4.2f}, vector<float>()),
-		TariffData((int)125, vector<float>{4.2f}, vector<float>()),
-		TariffData((int)224, vector<float>{4.2f}, vector<float>()) };
+	vector < float > vec;
+	vec.push_back(1.2f);
+	TariffData tariff1 = TariffData((int)124, vec, vector<float>());
+	TariffData tariff2 = TariffData((int)125, vec, vector<float>());
+	
+	vec[0] = 4.2f;
+	vector<TariffData> tariff1_vector;
+	tariff1_vector.push_back(TariffData((int)123, vec, vector<float>()));
+	tariff1_vector.push_back(TariffData((int)125, vec, vector<float>()));
+	tariff1_vector.push_back(TariffData((int)224, vec, vector<float>()));
 
 	DataManagement dataset1(tariff1_vector, vector<ZentralknotenData>());
 	
@@ -301,8 +314,13 @@ void DataManagement_SetTariffData_byId_Test(){
 void TariffDate_TariffData(){
 	////////////////////////////////////
 	/*Test TariffData.TariffData*/
+	
+	float arrF1[] = {1.2f, 1.3f, 2.2f, 3.1f};
+	vector<float> vec1 (arrF1,arrF1+4);
+	float arrF2[] = {1.7f, 1.47f, 5.2f, 8.1586f};
+	vector<float> vec2(arrF2,arrF2+4);
 
-	TariffData tariff1 = TariffData((int)124, vector < float > {1.2f, 1.3f, 2.2f, 3.1f}, vector < float > {1.7f, 1.47f, 5.2f, 8.1586f});
+	TariffData tariff1 = TariffData((int)124, vec1, vec2);
 	string tariff1_string = tariff1.toString();
 	TariffData tariff_result(tariff1_string);
 
@@ -350,8 +368,11 @@ void TariffDate_TariffData(){
 void ZentralknotenData_ZentralknotenData(){
 	////////////////////////////////////
 	/*Test ZentralknotenData.ZentralknotenData*/
+	
+	int arrINT[] = {1, 5, 4, 34, 7, 80};
+	vector < int > testVectoINT (arrINT,arrINT+6);
 
-	ZentralknotenData zentralknoten1 = ZentralknotenData((int)124, (int)0, vector < int > {1, 5, 4, 34, 7, 80});
+	ZentralknotenData zentralknoten1 = ZentralknotenData((int)124, (int)0, testVectoINT);
 	string zentralknoten_string = zentralknoten1.toString();
 	ZentralknotenData zentralknoten_result(zentralknoten_string);
 

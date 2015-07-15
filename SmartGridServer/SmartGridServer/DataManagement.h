@@ -26,7 +26,7 @@ class CPP_UNIT_TEST_EXPORT DataManagement
 private:
 	//vector<GroupData> tariffCourse;	//Gruppen, die vom Server verwaltet werden //Nicht implementiert
 	vector<TariffData> tariffData;					//Vom Server verwaltete Tarife
-	vector<ZentralknotenData> zentralknotenData;	//Vom Server verwaltete Tarife
+	vector<ZentralknotenData> zentralknotenData;	//Vom Server verwaltete Zentralknoten
 
 public:
 	DataManagement();
